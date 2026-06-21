@@ -2,11 +2,15 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 const cityOptions = [
+  'Akure, NG',
+  'Lagos, NG',
+  'Ibadan, NG',
   'San Francisco, CA',
   'New York, NY',
   'London, UK',
   'Tokyo, JP',
   'Sydney, AU',
+  'Abuja, NG',
 ]
 
 const weatherCodeLabels = {
@@ -88,6 +92,7 @@ function HeroSec() {
         weathercode: weatherData.current_weather.weathercode,
         description: getWeatherLabel(weatherData.current_weather.weathercode),
         time: weatherData.current_weather.time,
+        forecast: weatherData.forecast,
       })
     } catch (fetchError) {
       setError(fetchError.message || 'Unable to load weather data.')
